@@ -1,0 +1,214 @@
+1.
+//#include<iostream>
+//using namespace std;
+//template <typename T>
+//T getMax(T x,T y){
+//    if(x>y){
+//return x;
+//    }
+//    else{
+//return y;
+//    }}
+//int main(){
+//    cout<<getMax<int>(3,8)<<endl;
+//    cout<<getMax<char>('a','y')<<endl;
+//    cout<<getMax<double>(4.9,7.3);
+//    return 0;
+//}
+////////////////////////////////////////////////////////////////
+2.//#include<iostream>;
+//using namespace std;
+//template <typename T>
+//void m_swap(T &x,T &y){
+//   T t;
+//   t=x;
+//   x=y;
+//   y=t;
+//}
+//int main(){
+//   int x=10,y=100;
+//   char a='a',b='u';
+//   m_swap(x,y);
+//    m_swap(a,b);
+//    cout<<x<< ","<<y<<endl;
+//    cout<<a<< ","<<b<<endl;
+//
+//    return 0;
+//}
+////////////////////////////////////////////////////////
+3.//#include <iostream>;
+//using namespace std;
+//template <class T>
+// class Calculator{
+// private:
+//     T x;
+//     T y;
+// public:
+//     void setX(T x){
+//         this->x=x;
+//     }
+//     T getX(){
+//         return x;
+//     }
+//     void setY(T y){
+//         this->y=y;
+//     }
+//     T getY(){
+//         return y;
+//     }
+//     T add(){
+//         T r;
+//        r= x+y;
+//         return r;
+//     }
+//     T substract(){
+//         T r;
+//         r= x-y;
+//         return r;
+//     }
+//     T multiply(){
+//         T r;
+//         r= x*y;
+//         return r;
+//     }
+//     T divide(){
+//         T r;
+//         r= x/y;
+//         return r;
+//     }
+//     void display(){
+//         cout<<"add two variables "<<add()<<endl;
+//         cout<<"subtract two variables "<<substract()<<endl;
+//         cout<<"multiply two variables "<<multiply()<<endl;
+//         cout<<"divide two variables "<<divide()<<endl;
+//     }};
+//int main(){
+//    Calculator <int> c;
+//    Calculator<float> c1;
+//    c.setX(10);
+//    c.setY(5);
+//    c1.setX(6.9);
+//    c1.setY(10.3);
+//cout<<"int results"<<endl;
+//    c.display();
+//    cout<<"float results"<<endl;
+//    c1.display();
+//
+//    return 0;
+//}
+//////////////////////////////////////////////////////////////////////////////
+4.
+//#include <iostream>
+//using namespace std;
+//class Vehicle{
+//protected:
+//    string Vehicle_model;
+//    string Registration_number;
+//    int Vehicle_speed;
+//    double Fuel_capacity;
+//    double Fuel_consumption;
+//public:
+//    Vehicle(string Vehicle_model,string Registration_number,int Vehicle_speed,
+//            double Fuel_capacity,double Fuel_consumption){
+//        this->Vehicle_model=Vehicle_model;
+//        this-> Registration_number= Registration_number;
+//        this->Vehicle_speed=Vehicle_speed;
+//        this->Fuel_capacity=Fuel_capacity;
+//        this->Fuel_consumption=Fuel_consumption;
+//    };
+//   virtual void display(){
+//       cout<<"Vehicle_model is "<<Vehicle_model<<endl;
+//       cout<<"Registration_number is "<<Registration_number<<endl;
+//       cout<<"Vehicle_speed is "<<Vehicle_speed<<endl;
+//       cout<<"fuel_capacity is "<<Fuel_capacity<<endl;
+//       cout<<"Fuel_consumption is "<<Fuel_consumption<<endl;
+//    }
+//
+//};
+//class Truck :public Vehicle{
+//private:
+//   int Cargo_weight_limit;
+//public:
+//    Truck(int Cargo_weight_limit,string Vehicle_model,string Registration_number,int Vehicle_speed,
+//          double Fuel_capacity,double Fuel_consumption):
+//    Vehicle( Vehicle_model, Registration_number, Vehicle_speed, Fuel_capacity, Fuel_consumption){
+//        this->Cargo_weight_limit=Cargo_weight_limit;
+//    }
+//    void setCargo(int Cargo_weight_limit){
+//        this->Cargo_weight_limit=Cargo_weight_limit;
+//    }
+//    int getCargo(){
+//        return Cargo_weight_limit;
+//    }
+//    void display(){
+//        Vehicle::display();
+//        cout<<" Cargo_weight_limit is "<<Cargo_weight_limit<<endl;
+//    }
+//};
+//class Bus:public Vehicle{
+//private:
+//    int NumOfPassengers;
+//public:
+//    Bus(int NumOfPassengers,string Vehicle_model,string Registration_number,int Vehicle_speed,
+//        double Fuel_capacity,double Fuel_consumption):
+//        Vehicle( Vehicle_model, Registration_number,Vehicle_speed, Fuel_capacity, Fuel_consumption){
+//        this->NumOfPassengers=NumOfPassengers;
+//    }
+//    void setNumOfPassengers(int NumOfPassengers){
+//        this->NumOfPassengers=NumOfPassengers;
+//    }
+//    int getNumOfPassengers(){
+//        return NumOfPassengers;
+//    }
+//    void display(){
+//        Vehicle::display();
+//        cout<<" number of passengers is "<<NumOfPassengers<<endl;
+//    }
+//};
+//int main(){
+//    Vehicle* v= new Truck(70,"toyota","1000",2000,500,200);
+//    v->display();
+//    v=new Bus(200,"toyota","1000",2000,500,200);
+//    v->display();
+//    return 0;
+//}
+////////////////////////////////////////////////////////
+5.#include <iostream>
+using namespace std;
+class newExc:public exception{
+public:
+     const char* what() const throw() {
+         return "cant divide by zero";
+     }
+     };
+    class newExc2:public exception{
+    public:
+        const char* what() const throw(){
+            return "cant divide by less than zero";
+        };
+};
+int divide(int x,int y) {
+    if(y==0) {
+        throw newExc();
+    }
+    else if(y<0) {
+        throw newExc2();
+    }
+    return x/y;
+}
+
+int main() {
+    int x, y;
+    cin >> x >> y;
+    try {
+        cout << divide(x, y);
+    }
+    catch (newExc e) {
+        cout << e.what() << endl;
+    }
+    catch (newExc2 e) {
+        cout << e.what() << endl;
+    }
+
+    return 0;
+}

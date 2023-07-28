@@ -1,0 +1,463 @@
+1.
+//#include <iostream>
+//using namespace std;
+//class Vehicle{
+//protected:
+//    string Vehicle_model ;
+//    string Registration_number;
+//    int Vehicle_speed;
+//    double Fuel_capacity;
+//    double Fuel_consumption;
+//public:
+//    void setVehicleModel(string v_model){
+//        Vehicle_model=v_model;
+//    }
+//   double fullneeded(int distance){
+//        double fullneeded;
+//        fullneeded=Fuel_consumption*distance;
+//        return fullneeded;
+//    }
+//     double distanceCovered(int hour){
+//        return Vehicle_speed*hour;
+//    }
+//    void display(){
+//        cout<<"the vehicle model : "<<Vehicle_model<<endl;
+//        cout<<"registration name is: " <<Registration_number<<endl;
+//        cout<<"vehicle speed is: "<<Vehicle_speed<<endl;
+//        cout<<"fuel capacity is: "<<Fuel_capacity<<endl;
+//        cout<<"fuel comsumption is: "<< Fuel_consumption<<endl;
+//        cout<<"full needed is :"<<fullneeded(300)<<endl;
+//        cout<<"distance covered : "<<distanceCovered(3)<<endl;
+//    }
+//    Vehicle(string v_model,string r_number,int v_speed, double f_capacity, double f_consumption){
+//        Vehicle_model=v_model;
+//        Registration_number=r_number;
+//        Vehicle_speed=v_speed;
+//        Fuel_capacity=f_capacity;
+//        Fuel_consumption=f_consumption;
+//        cout<<"Vehicle"<<endl;
+//    }
+//
+//};
+//class Truck:public Vehicle{
+//private:
+//    int cargo;
+//
+//public:
+//    void setCargo(int c){
+//        cargo =c;
+//    }
+//    int getCargo(){
+//        return cargo;}
+//
+//        Truck (string v_model,string r_number,int v_speed, double f_capacity, double f_consumption,int c):
+//        Vehicle(v_model,r_number,v_speed,f_capacity,f_consumption) {
+//            setCargo(c);
+//        }
+//       void display(){
+//        Vehicle::display();
+//           cout<<"Cargo weight limit is : "<<cargo<<endl;
+//    }
+//};
+//class Bus:public Vehicle{
+//private:
+//    int numOfPassengers;
+//public:
+//    void setNumOfPassengers(int p){
+//        numOfPassengers=p;
+//    }
+//    int getNumOfPassengers(){
+//        return numOfPassengers;
+//    }
+//    Bus (string v_model,string r_number,int v_speed, double f_capacity, double f_consumption,int p):
+//    Vehicle(v_model,r_number,v_speed,f_capacity,f_consumption) {
+//        setNumOfPassengers(p);
+//    }
+//    void display(){
+//        Vehicle::display();
+//        cout<<"number of passengers : "<<numOfPassengers<<endl;
+//    }
+//};
+//int main() {
+//
+//  // Vehicle v("Toyota","010",60,100,65);
+//    Truck t("toyota","010",600,400,200,33);
+//    Bus b("Toyota","010",60,100,65,70);
+//    //v.display();
+//    //t.display();
+//    b.display();
+//    return 0;
+//}
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+2.
+//#include <iostream>
+//using namespace std;
+//class circle{
+//protected:
+//    double radius=1.0;
+//    string color="red";
+//public:
+//circle(){
+//  radius=1.0;
+//  color="red";
+//
+//}
+//    circle (double r){
+//        radius=r;
+//        color="red";
+//    }
+//    circle (double r,string c){
+//        radius=r;
+//        color=c;
+//    }
+//    void setRadius(double r){
+//        radius=r;
+//    }
+//    void setColor(string c){
+//        color=c;
+//    }
+//    double getRadius(){
+//        return radius;
+//    };
+//    string getColor(){
+//        return color;
+//    };
+//    double getArea(){
+//        return 3.14*radius*radius;
+//    }
+//};
+//class cylinder:public circle{
+//private:
+//    double height =1.0;
+//public:
+//    cylinder(){
+//     height=1.0;
+//    }
+//    cylinder(double r):circle(r){
+//        cout<<"equation 2"<<endl;
+//    }
+//    cylinder(double r,double h):circle(r){
+//        height=h;
+//      //  cout<<"equation 3"<<endl;
+//    }
+//    cylinder(double r,string c,double h):circle(r,c){
+//        height=h;
+//        cout<<"equation 4"<<endl;
+//    }
+//void setHeight(double h){
+//        height=h;
+//    }
+//    double getHeight(){
+//        return height;
+//    }
+//    double getVolume(){
+//        return  3.14*radius*radius*height;
+//    }
+//
+//};
+//int main(){
+//    circle c;
+//    cylinder y(2,5);
+////    c.setRadius(2);
+////    y.setHeight(5);
+//    c.setColor("green");
+//    cout<<"the color = "<<c.getColor()<<endl;
+//   cout<<"the area = "<< c.getArea()<<endl;
+//   cout<<"the volume of clylinder = "<<y.getVolume();
+//  y.getVolume();
+//    return 0;
+//}
+//////////////////////////////////////////////////////
+3.//#include <iostream>
+//#include <cmath>
+//using namespace std;
+//class myPoint{
+//protected:
+//    int x;
+//    int y;
+//public:
+//    void setX(int a){
+//        x=a;
+//    }
+//    void setY(int b){
+//        y=b;
+//    }
+//    int getX(){
+//        return x;
+//    }
+//    int getY(){
+//        return y;
+//    }
+//};
+//class myLine {
+//private:
+//    myPoint begin;
+//    myPoint end;
+//
+//public:
+//    myLine(int x1, int y1, int x2, int y2) {
+//        begin.setX(x1);
+//        begin.setY(y1);
+//        end.setX(x2);
+//        end.setY(y2);
+//    }
+//
+//    myLine(myPoint b, myPoint e) {
+//        begin = b;
+//        end = e;
+//    }
+//
+//    void setBegin(myPoint b) {
+//        begin = b;
+//    }
+//
+//    void setEnd(myPoint e) {
+//        end = e;
+//    }
+//
+//    myPoint getBegin() {
+//        return begin;
+//    }
+//
+//    myPoint getEnd() {
+//        return end;
+//    }
+//
+//    void setBeginX(int x) {
+//        begin.setX(x);
+//    }
+//
+//    int getBeginX() {
+//        return begin.getX();
+//    }
+//
+//    void setBeginY(int y) {
+//        begin.setY(y);
+//    }
+//
+//    int getBeginY() {
+//        return begin.getY();
+//    }
+//
+//    void setEndX(int x) {
+//        end.setX(x);
+//    }
+//
+//    int getEndX() {
+//        return end.getX();
+//    }
+//
+//    void setEndY(int y) {
+//        end.setY(y);
+//    }
+//
+//    int getEndY() {
+//        return end.getY();
+//    }
+//
+//    void setBeginXY(int x, int y) {
+//        begin.setX(x);
+//        begin.setY(y);
+//    }
+//
+//    void setEndXY(int x, int y) {
+//        end.setX(x);
+//        end.setY(y);
+//    }
+//};
+//int main(){
+//        myLine l(5,7,9,7);
+//        l.getBeginY();
+//        l.getEndX();
+//        l.getBeginX();
+//        l.getEndY();
+//    return 0;
+//}
+/////////////////////////////////////////////////////////////////////////////////////////////////
+4.//#include <iostream>
+//#include <cmath>
+//using namespace std;
+//class myComplex{
+//private:
+//    double real=0.0;
+//    double imag = 0.0;
+//public:
+//    myComplex(){
+//        real=0.0;
+//        imag=0.0;
+//    }
+//    myComplex(double r,double i){
+//        real=r;
+//        imag=i;
+//    }
+//    void setReal(double r){
+//        real = r;
+//    }
+//    void setImag(double i){
+//        imag=i;
+//    }
+//    double getReal(){
+//        return real;
+//    }
+//    double getImag(){
+//        return imag;
+//    }
+//    void setValue(double r,double i){
+//        real=r;
+//        imag=i;
+//    }
+//    void toString(){
+//        cout<<real <<" + "<<imag<<" i"<<endl;
+//    }
+//    bool isReal(){
+//        if (imag==0){
+//            return true;
+//        }
+//        else{
+//            return false;
+//        }
+//    }
+//    bool isImaginary() {
+//        if (real == 0) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+//
+//    }
+//    bool equals(double r,double i){
+//
+//        if(real==r &&imag==i){
+//            return true;
+//        } else
+//        {
+//            return false;
+//        }
+//    }
+//    bool equals(myComplex another){
+//        if(real==another.real&&imag==another.imag){
+//            return true;
+//        }
+//        else{
+//            return false;
+//        }
+//    }
+//    double magntiude(){
+//        return ::sqrt((real*real)+(imag*imag));
+//    }
+//    void addInto(myComplex another){
+//
+//        real=real+another.real;
+//        imag=imag+another.imag;
+//       toString();
+//    }
+//    void addNew(myComplex,myComplex another){
+//
+//        real=real+another.real;
+//        imag=imag+another.imag;
+//        toString();
+//    }
+//
+//};
+//int main(){
+//    myComplex c(3,4),c2(2.5,8),c3;
+//   c.addInto(c2);//c+=c2
+//   //c3.addNew(c,c2);
+//     //cout <<c.magntiude();
+//     //cout<<c.isReal()<<endl;
+//    //cout<<  c.equals(2.5,9)<<endl;
+//    // cout<<  c.equals(c2)<<endl;
+//    //c.toString();
+//
+//    return 0;
+//}
+//////////////////////////////////////////////////////////////////////////////////
+5.
+//#include<iostream>
+//using namespace std;
+//class point{
+//protected:
+//    float x=0.0;
+//    float y=0.0;
+//public:
+//    point(int a ,int b){
+//        x=a;
+//        y=b;
+//    }
+//    point(){
+//        x=0.0;
+//        y=0.0;
+//        cout<<"yes";
+//    }
+//   void setX(int a){
+//        x=a;
+//    }
+//    void setY(int b){
+//        y=b;
+//    }
+//    int getX(){
+//        return x;
+//    }
+//    int getY(){
+//        return y;
+//    }
+//    void setXY(int a,int b){
+//        x=a;
+//        y=b;
+//    }
+//};
+//class movablepoint:public point{
+//private:
+//    float xSpeed =0.0;
+//    float ySpeed =0.0;
+//public:
+//    movablepoint(float x,float y,float xs,float ys):point(x,y){
+//        xSpeed=xs;
+//        ySpeed=ys;
+//    }
+//    movablepoint(float xs,float ys){
+//        xSpeed=xs;
+//        ySpeed=ys;
+//    }
+//    movablepoint(){
+//        xSpeed=0.0;
+//        ySpeed=0.0;
+//    }
+//   void setXspeed(float xs){
+//        xSpeed=xs;
+//    }
+//    void setYspeed(float ys){
+//        ySpeed=ys;
+//    }
+//    float getXspeed(){
+//        return xSpeed;
+//    }
+//    float getYspeed(){
+//        return ySpeed;
+//    }
+//    void speed(float xs,float ys){
+//        xSpeed=xs;
+//        ySpeed=ys;
+//    }
+//    float move(){
+//
+//    }
+//};
+//
+//int main(){
+//    point p(3,9);
+//    movablepoint m(3,7,7,9);
+//    m.setXspeed(4);
+// cout<<m.getXspeed()<<endl;
+//   cout<<p.getX()<<endl;
+//   cout<<p.getY();
+//    return 0;
+
+///////////////////////////////////////////////////
+6.
+Composition is in contrast to inheritance, it enables the creation of complex types by combining objects (components) of other types, 
+rather than inheriting from a base or parent class. To put it simply,composition contains instances of other classes that implement the
+ desired functionality.
+Inheritance: “is a.” 
+Composition: “has a.”

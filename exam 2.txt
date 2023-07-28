@@ -1,0 +1,163 @@
+1.- Define the four concepts of OOP with short explain? 
+Abstraction:it lets you avoid repeating the same work multiple times.
+Encapsulation:is a  a protective barrier that keeps the data and code safe within the class itself.
+Inheritance:lets programmers create new classes that share some of the attributes of existing classes. Using Inheritance lets us build on previous work without reinventing the wheel.
+Polymorphism:overloading and overridding
+ ->overloading That’s when the code itself implies different meanings.
+ ->overriding That’s when the values of the supplied variables imply different meanings.
+
+
+2.- What is the difference between access modifiers?
+public:it is visible everywhere even outside the package.
+Private:It has scope only within the class
+Protected :Its scope limits within the package and all sub classes.
+
+
+3.Write an example for Template?
+->function take 2 params of any type then swap them.
+#include<iostream>;
+using namespace std;
+template <typename T>
+void m_swap(T &x,T &y){
+  T t;
+   t=x;
+   x=y;
+   y=t;
+}
+int main(){
+  int x=10,y=100;
+   char a='a',b='u';
+  m_swap(x,y);
+   m_swap(a,b);
+    cout<<x<< ","<<y<<endl;
+    cout<<a<< ","<<b<<endl;
+    return 0;
+}
+
+
+4- Write an example for Exception Handling? 
+->create divide function which take intx,inty and return y/x then solve the case of (y=0)by throw defined exception,
+and also solve the case of(y<0)by throw another defined exception
+5.#include <iostream>
+using namespace std;
+class newExc:public exception{
+public:
+     const char* what() const throw() {
+         return "cant divide by zero";
+     }
+     };
+    class newExc2:public exception{
+    public:
+        const char* what() const throw(){
+            return "cant divide by less than zero";
+        };
+};
+int divide(int x,int y) {
+    if(y==0) {
+        throw newExc();
+    }
+    else if(y<0) {
+        throw newExc2();
+    }
+    return x/y;
+}
+
+int main() {
+    int x, y;
+    cin >> x >> y;
+    try {
+        cout << divide(x, y);
+    }
+    catch (newExc e) {
+        cout << e.what() << endl;
+    }
+    catch (newExc2 e) {
+        cout << e.what() << endl;
+    }
+
+    return 0;
+}
+
+
+5.- What is the difference between Overloading and Overriding?
+Function Overloading
+->two or more functions can own the same name, but the parameters will be different.
+->There is no requirement of the inheritance concept here.
+->It happens during compile time.
+->A function has the ability to load multiple times.
+
+Function Overriding
+->permit us to redefine a method with the same name and signature.
+-> we need an inheritance concept.
+->It occurs during the run time.
+->A function can be overridden only a single time.
+
+
+
+6.
+#include <iostream>
+
+using namespace std;
+class Point2D{
+protected:
+    float x,y=0.0;
+public:
+    Point2D(){
+        x=0.0;
+        y=0.0;
+    }
+    Point2D(float x,float y){
+    this->x=x;
+    this->y=y;
+    }
+    void setX(float x){
+        this->x=x;
+    }
+     void setY(float y){
+        this->y=y;
+    }
+    float getX(){
+    return x;}
+    float getY(){
+    return y;}
+
+    float* getXY(){
+        float arr []={x,y};
+        return arr;
+    }
+};
+class Point3D:public Point2D{
+private:
+    float z=0.0;
+public:
+    Point3D():Point2D(){
+    x=0.0;
+    y=0.0;
+    z=0.0;}
+
+    Point3D(float x,float y,float z):Point2D(x, y){
+        this->z=z;
+        }
+
+        void setXYZ(float x,float y,float z){
+        this->x=x;
+        this->y=y;
+        this->z=z;
+        }
+        void setZ(float z){
+            this->z=z;
+        }
+        float getZ(){
+        return z;}
+
+};
+
+
+int main()
+{
+   //Point2D p1 (2,7);
+   Point3D p2 (3,6,8);
+
+    return 0;
+}
+/////////////////////////////////////////////////////////

@@ -1,0 +1,325 @@
+1.circle
+//#include <iostream>
+//using namespace std;
+//class circle{
+//private:
+//    double radius;
+//    string color;
+//public:
+//    void setRadius(double r){
+//        radius=r;
+//    }
+//    void setColor(string c){
+//        color=c;
+//    }
+//    string getColor(){
+//        return color;
+//    }
+//    double getRadius(){
+//        return radius;
+//    };
+//    circle(){
+//        setRadius(radius);
+//        setColor(color);
+//    }
+//    circle(double r){
+//        radius=r;
+//    }
+//    circle(double r,string c){
+//        setRadius(r);
+//        setColor(c);
+//    }
+//    double area(){
+//       double area;
+//       area= 3.14 *radius*radius;
+//        return area;
+//
+//    }
+//};
+//
+//int main() {
+//    //circle c();
+//    //circle c(1.0);
+//    circle c(1.0,"red");
+//    c.setRadius(9);
+//    c.setColor("green");
+//    c.getRadius();
+//   c.getColor();
+//    cout<<c.area();
+//    return 0;
+//}
+//////////////////////////////////////////////////////////////////////////////////////
+2.employee
+//#include <iostream>
+//using namespace std;
+//class employee{
+//private:
+//    int id;
+//    string firstName;
+//    string lastName;
+//    int salary;
+//public:
+//    void setId(int ide){
+//        id=ide;
+//    }
+//    void setFirstName(string fName){
+//        firstName=fName;
+//    }
+//    void setLastName(string lName){
+//        lastName=lName;
+//    }
+//    void setSalary(int sal){
+//        salary=sal;
+//    }
+//    int getId(){
+//        return id;
+//    }
+//    string getFirstName() {
+//        return firstName;
+//    }
+//        string getLastName(){
+//        return lastName;
+//        }
+//        int getSalary() {
+//            return salary;
+//        }
+//        string getName(){
+//        string fullName=firstName+" "+lastName;
+//            return fullName;
+//    }
+//        int getAnnualSalary(){
+//            return salary*12;
+//    }
+//    int raiseSalary(int percent){
+//        int inc,newSalary;
+//        inc=(salary*percent)/100;
+//        newSalary=inc+salary;
+//
+//    }
+//    employee(int ide,string fName,string lName,int sal){
+//        setId(ide);
+//        setFirstName(fName);
+//        setLastName(lName);
+//        setSalary(sal);
+//    }
+//
+//};
+//
+//int main(){
+//    employee e(5,"aya","ali",5000);
+//   e.setId(1);
+//   e.setFirstName("nour");
+//   e.setLastName("fawzy");
+//   e.setSalary(10000);
+//   e.getId();
+//   e.getFirstName();
+//   e.getLastName();
+//   e.getSalary();
+//   cout<<"full name is "<<e.getName()<<endl;
+//    cout<< "annal salary = "<<e.getAnnualSalary()<<endl;
+//    cout<<"raise salary = "<<e.raiseSalary(40)<<endl;
+//
+//
+//    return 0;
+//}
+///////////////////////////////////////////////////////////////////
+2.employee
+(another solution)
+#include <iostream>
+//using namespace std;
+//class employee{
+//private:
+//    int id;
+//    string firstName;
+//    string lastName;
+//    int salary;
+//public:
+//    void setSalary(int sal){
+//        salary=sal;
+//    }
+//    int getId(){
+//        return id;
+//    }
+//    string getFirstName() {
+//        return firstName;
+//    }
+//        string getLastName(){
+//        return lastName;
+//        }
+//        int getSalary() {
+//            return salary;
+//        }
+//        string getName(){
+//        string fullName=firstName+" "+lastName;
+//            return fullName;
+//    }
+//        int getAnnualSalary(){
+//            return salary*12;
+//    }
+//    void raiseSalary(int percent){
+//        int inc,newSalary;
+//        inc=(salary*percent)/100;
+//        newSalary=inc+salary;
+//
+//    }
+//    employee(int ide,string fName,string lName,int sal){
+//       id=ide;
+//       firstName=fName;
+//       lastName=lName;
+//        setSalary(sal);
+//    }
+//
+//};
+//int main(){
+//    employee e(5,"aya","ali",5000);
+//   e.setSalary(10000);
+//   e.getId();
+//   e.getFirstName();
+//   e.getLastName();
+//   e.getSalary();
+//   cout<<"full name is "<<e.getName()<<endl;
+//    cout<< "annal salary = "<<e.getAnnualSalary()<<endl;
+//    e.raiseSalary(40)<<endl;
+//    return 0;
+//}
+///////////////////////////////////////////////////////////////////////////
+3.account
+//#include <iostream>;
+//using namespace std;
+//class account{
+//private:
+//    string id;
+//    string name;
+//    int balance=0;
+//public:
+//    void setId(string ide){
+//        id=ide;
+//    }
+//    void setName(string n){
+//        name=n;
+//    }
+//    void setBalance(int bal){
+//        balance=bal;
+//    }
+//    string getId(){
+//        return id;
+//    }
+//    int getBalance(){
+//        return balance;
+//    }
+//    string getName(){
+//        return name;
+//    }
+//   void withthrew(float amount){
+//        balance-=amount;
+//        
+//    }
+   void deposit(float amount){
+//        balance+=amount;
+//        
+//    }
+   void transto(account& another,float amount){
+//        balance-=amount;
+           another.balancce+=amount;
+
+//        
+//    }
+
+//    ~account() {
+//        cout<<"Inside Destructor";
+//    }
+//    account(string ide,string n){
+//        setId(ide);
+//        setName(n);
+//    }
+//    account(string ide,string n,int bal){
+//        setId(ide);
+//        setName(n);
+//        setBalance(bal);
+//    }
+//
+//
+//
+//};
+//
+//int main(){
+//    //account a("9","mariam");
+//    account a("7","zeina",800);
+//    a.setId("2");
+//    a.setName("rana");
+//    a.setBalance(1111);
+//    cout<<a.getId()<<endl;
+//    cout<<a.getName()<<endl;
+//    cout<<a.getBalance()<<endl;
+//    a.credit(2000)<<endl;
+//    cout<<a.debit(2000)<<endl;
+//    return 0;
+//}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+4.time
+//#include <iostream>
+//using namespace std;
+//class timee{
+//private:
+//    int hour;
+//    int min;
+//    int sec;
+//public:
+//    void setHour(int h){
+//        hour=h;
+//    }
+//    void setMinute(int m){
+//        min=m;
+//    }
+//    void setSecond(int s){
+//        sec=s;
+//    }
+//    int getHour(){
+//        return hour;
+//    }
+//    int getMinute(){
+//        return min;
+//    }
+//    int getSecond(){
+//        return sec;
+//    }
+//    void setTime(int h,int m,int s){
+//        hour=h;
+//        min=m;
+//        sec=s;
+//    }
+//   int nextSecond(){
+//        timee t(hour,min,sec);
+//        t.sec++;
+//        if(t.sec==60){
+//            t.min++;
+//            t.sec=0;
+//        }
+//        if(t.min==60) {
+//            hour++;
+//            min=0;
+//            sec=0;
+//        }
+//        if(t.hour==24){
+//            sec++;
+//            hour=0;
+//            min=0;
+//        }
+//        return t;
+//
+//    }
+//    timee(int hour,int min,int sec){
+//        setHour(hour);
+//        setMinute(min);
+//        setSecond(sec);
+//    };
+//};
+//int main(){
+//    timee t(2,5,40);
+//   cout<<t.nextSecond()<<endl;
+//    cout<<t.getHour()<<endl;
+//    cout<<t.getMinute()<<endl;
+//    cout<<t.getSecond()<<endl;
+//
+//    return 0;
+//}
